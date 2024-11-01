@@ -25,11 +25,5 @@ The Airbnb clone is built using modern web development tools and frameworks to d
 - **Backend**: Node.js with Express (if applicable)
 - **Routing**: React Router (if applicable)
 
-## Setup and Installation
 
-To run this project locally, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/GarvSheth/clone_airbnb.git
 
