@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi</title>
+</head>
+<body>
+    <h1>Listing detail</h1>
+    <ul>
+            <li>
+                <strong>Name:</strong> <%= detail_place.title %><br>
+                <strong>Description:</strong> <%= detail_place.description %><br>
+                <strong>Image: <%= detail_place.image %></strong><br>
+                <strong>Location:</strong> <%= detail_place.location %><br>
+                <strong>Country:</strong> <%= detail_place.country %><br>
+                <strong>Price:</strong> $<%= detail_place.price %>
+            </li>
+    </ul>
+</body>
+</html>

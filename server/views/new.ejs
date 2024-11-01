@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi</title>
+</head>
+<body>
+    <h1>Add a New Place</h1>
+    <form action="/places" method="POST" enctype="multipart/form-data">
+        <!-- Title Field -->
+        <label>Title:</label>
+        <input type="text" id="title" name="title" required>
+        <br><br>
+
+        <!-- Description Field -->
+        <label >Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br><br>
+
+        <!-- Image Field -->
+        <label>Image URL:</label>
+        <input type="url" id="image" name="image" required>
+        <br><br>
+
+        <!-- Price Field -->
+        <label>Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+        <br><br>
+
+        <!-- Location Field -->
+        <label>Location:</label>
+        <input type="text" id="location" name="location" required>
+        <br><br>
+
+        <!-- Country Field -->
+        <labe>Country:</label>
+        <input type="text" id="country" name="country" required>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Add Place</button>
+    </form>
+</body>
+</html>
