@@ -1,0 +1,131 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans" !important;
+}
+/* 
+.title{
+    font-family: "Roboto Mono";
+} */
+
+.container{
+    flex: 1;
+}
+/* Navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+.fa-plane{
+    color: #FF5A5F;
+    font-size: 2rem;
+}
+
+.navbar-brand{
+    margin-left: 10px;
+    margin-right: 10px !important;
+}
+
+.foot-links a{
+    text-decoration: none;
+    color: #333333 ;
+
+}
+
+.foot-links a:hover{
+    text-decoration: underline;   
+}
+
+.foot-links{
+    width: 100%;
+}
+
+.foot-socials{
+    width: 100%;
+}
+
+.foot-socials i {
+    font-size: 2 rem;
+}
+
+.foot-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* cards */
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p, .card-text h5 {
+    font-weight: 400;
+}
+
+.listing-link{
+    text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+/* Card Effect */
+.listing-link:hover{
+    transform: scale(1.02);
+}
+
+.card-img-top:hover{
+    opacity: 0.9;
+    background-color: white;
+}
+
+/* new lsiting */
+.add-btn{
+    background-color: #FF5A5F !important;
+    border: none !important;
+}
+
+/* Edit Page */
+.edit-btn{
+    background-color: #FF5A5F !important;
+    border: none !important;
+    margin-left: 0px;
+}
+
+/* show Page */
+.show-img{
+    height:30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btns a{
+    margin-left: 0 !important; 
+}
