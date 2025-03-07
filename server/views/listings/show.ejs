@@ -1,0 +1,66 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-3 mt-3">
+            <h2><%= detail_place.title %></h2>
+        </div>
+        <div class="card mt-1 col-6 offset-3 show-card listing-card" style="width: 40rem;">
+            <img src="https://img.freepik.com/free-photo/big-ben-westminster-bridge-sunset-london-uk_268835-1395.jpg?t=st=1735823200~exp=1735826800~hmac=44ae6ad2a3b9283a5aced4d52eea9b5077adee037568a66087bb10bdca3a81b6&w=900" class="card-img-top show-img" alt="Not Available">
+            <div class="card-body mt-2">
+                <p class="card-title">
+                    <%= detail_place.description %> <br />
+                    $<%= detail_place.price %>  <br />
+                    <%= detail_place.location %> <br />
+                    <%= detail_place.country %>
+                </p>
+            </div>
+            <div class="btns">
+                <a href="/listings/<%= detail_place._id %>/edit" class="btn btn-primary edit-btn offset-3">Edit</a>
+                <form method="POST" action="/listings/<%= detail_place._id %>?_method=DELETE">
+                    <button class="btn btn-dark offset-5">Delete</button>
+                </form>
+            </div>
+            <!-- <div class="btns">
+                <a href="/listings/<%= detail_place._id %>/edit">
+                    <button type="Edit" class="btn btn-primary edit-btn offset-3">Edit</button><br /><br />
+                </a>
+                <form method="POST" action="/listings/<%= detail_place._id %>?_method=DELETE">
+                    <button class="btn btn-dark offset-5">Delete</button>
+                </form>
+            </div> -->
+        </div>
+
+        <div class="col-8 offset-3 mt-3 mb-3">
+            <hr />
+            <p><b>All Reviews</b></p>
+            <div class="row">
+            <% for(review of detail_place.reviews) {%>
+                <div class="card col-5 ms-3 mb-3 ">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text"><%=review.rating%> stars</p>
+                        <p class="card-text"><%=review.comment%></p>
+                    </div>
+                </div>
+            <% }%>
+            </div>
+        </div>
+
+        <div class="col-8 offset-3 mt-3">
+            <hr />
+            <h4>Leave a Review</h4>
+            <form action="/listings/<%=detail_place._id%>/reviews" method="post" novalidate class="needs-validation">
+                <div>
+                    <label for="rating" class="form-label">Rating</label>
+                    <input class="form-range" type="range" min="1" max="5" id="rating" name="review[rating]"/>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" id="comment" rows="5" name="review[comment]" required></textarea>
+                    <div class="invalid-feedback">Please add some comment</div>
+                </div>
+                <button class="btn btn-outline-dark mb-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
