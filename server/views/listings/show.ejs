@@ -36,17 +36,20 @@
             <div class="row">
             <% for(review of detail_place.reviews) {%>
                 <div class="card col-5 ms-3 mb-3 ">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text"><%=review.rating%> stars</p>
-                        <p class="card-text"><%=review.comment%></p>
+                    <div class="card-body mt-2">
+                        <h5 class="card-title mb-1=2">John Doe</h5>
+                        <p class="card-text mb-0"><%=review.rating%> stars</p>
+                        <p class="card-text mb-2 mt-2"><%=review.comment%></p>
                     </div>
+                    <form class="mb-3 mt-2" method="post" action="/listings/<%=detail_place._id%>/reviews/<%=review._id%>?_method=DELETE">
+                        <button class="btn btn-sm btn-dark">Delete</button>
+                    </form>
                 </div>
             <% }%>
             </div>
         </div>
 
-        <div class="col-8 offset-3 mt-3">
+        <div class="col-8 offset-3">
             <hr />
             <h4>Leave a Review</h4>
             <form action="/listings/<%=detail_place._id%>/reviews" method="post" novalidate class="needs-validation">

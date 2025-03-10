@@ -9,6 +9,7 @@ const wrapAsync = require("./utils.js/wrapAsync");
 const ExpressError = require("./utils.js/ExpressError");
 const {listingSchema, reviewSchema}=require("./schema");
 const Review = require("./models/reviews");
+const listing = require("./models/listing");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -126,6 +127,14 @@ app.post("/listings/:id/reviews", validateReview, wrapAsync(async(req, res)=> {
     await listing.save();
 
     res.redirect(`/listings/${listing._id}`)
+}));
+
+//delete review route
+app.post("/listings/:id/reviews/:reviewId", wrapAsync(async(req,res)=>{
+    const {id,reviewId}= req.params;
+    await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+    await Review.findByIdAndDelete(reviewId);
+    res.redirect(`/listings/${id}`);
 }));
 
 app.all("*", (req, res, next) => {
