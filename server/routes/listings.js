@@ -4,6 +4,7 @@ const Listing = require("../models/listing.js");
 const wrapAsync = require("../utils.js/wrapAsync");
 const ExpressError = require("../utils.js/ExpressError");
 const {listingSchema}=require("../schema.js");
+const listing = require("../models/listing.js");
 
 const validateListing =(req, res, next) => {
     let { error, value } = listingSchema.validate(req.body);
@@ -29,6 +30,10 @@ router.get("/new", (req, res) => {
 router.get("/:id", wrapAsync(async (req, res) => {
     let {id} = req.params;
     const detail_place = await Listing.findById(id).populate("reviews");
+    if(!detail_place){
+        req.flash("failed","Unable to find the listing");
+        res.redirect("/listings");
+    }
     res.render("./listings/show.ejs", {detail_place});
 }));
 
@@ -37,6 +42,7 @@ router.post("/", validateListing,
     wrapAsync(async (req,res,next) => {
         const newListing = new Listing(req.body.listing);
         await newListing.save();
+        req.flash("success","New listing Added!");
         res.redirect("/listings");
     })
 );
@@ -45,13 +51,19 @@ router.post("/", validateListing,
 router.get("/:id/edit", wrapAsync(async (req,res) => {
     let {id} = req.params;
     const edit_place = await Listing.findById(id);
+    if(!edit_place){
+        req.flash("failed","Unable to find the listing");
+        res.redirect("/listings");
+    }
     res.render("./listings/edit.ejs",{edit_place});
 }));
 
 //Update
 router.put("/:id", validateListing, wrapAsync(async(req,res) =>{
     let {id} = req.params;
-    await Listing.findByIdAndUpdate(id,{...req.body});
+    await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    const title=req.body.listing.title;
+    req.flash("success",`${title} is updated`);
     res.redirect(`/listings/${id}`);
 }));
 
@@ -59,6 +71,7 @@ router.put("/:id", validateListing, wrapAsync(async(req,res) =>{
 router.delete("/:id", wrapAsync(async(req,res) => {
     let {id} = req.params;
     await Listing.findByIdAndDelete(id);
+    req.flash("success","Listing Deleted Successfully!");
     res.redirect("/listings");
 }));
 

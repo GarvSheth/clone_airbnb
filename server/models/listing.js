@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Review = require("./reviews.js");
+const { required } = require("joi");
 const Schema = mongoose.Schema;
 
 const  listingSchema = new Schema({
@@ -12,7 +13,7 @@ const  listingSchema = new Schema({
     },
     image: {
         type: String,
-        default: "https://unsplash.com/photos/a-path-through-a-field-of-wildflowers-leading-to-the-ocean-iuaQH6ZADPw",
+        set: (v)=> v && v.trim()==="" ? "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" : v,
         //something different in original check 55 module, lec3 and 7:00
     },
     price: {

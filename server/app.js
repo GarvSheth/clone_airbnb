@@ -7,6 +7,8 @@ const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils.js/ExpressError");
 const listings = require("./routes/listings.js");
 const reviews = require("./routes/reviews.js");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -34,8 +36,28 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
+const sessionOptions = {
+    secret: "supersecretcode",
+    resave: false,
+    saveUninitialized: true,
+    cookie:{
+        expires: Date.now()+ 7*24*60*60*1000,
+        maxAge: 7*24*60*60*1000,
+        httpOnly : true
+    }
+}
+
 app.get("/", (req,res) => {
     res.send("This is home page");
+})
+
+app.use(session(sessionOptions));
+app.use(flash());
+
+app.use((req, res, next)=> {
+    res.locals.success=req.flash("success");
+    res.locals.error=req.flash("failed");
+    next();
 })
 
 //All the routes of listings
