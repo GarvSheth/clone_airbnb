@@ -31,7 +31,7 @@ router.get("/:id", wrapAsync(async (req, res) => {
     let {id} = req.params;
     const detail_place = await Listing.findById(id).populate("reviews");
     if(!detail_place){
-        req.flash("failed","Unable to find the listing");
+        req.flash("error","Unable to find the listing");
         res.redirect("/listings");
     }
     res.render("./listings/show.ejs", {detail_place});
@@ -52,7 +52,7 @@ router.get("/:id/edit", wrapAsync(async (req,res) => {
     let {id} = req.params;
     const edit_place = await Listing.findById(id);
     if(!edit_place){
-        req.flash("failed","Unable to find the listing");
+        req.flash("error","Unable to find the listing");
         res.redirect("/listings");
     }
     res.render("./listings/edit.ejs",{edit_place});
