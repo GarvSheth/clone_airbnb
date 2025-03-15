@@ -7,7 +7,6 @@
                 <div class="mb-3">
                     <label class="form-label">Title</label>
                     <input type="text" id="title" name="listing[title]" class="form-control" value="<%= edit_place.title %>" required>
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     <div class="invalid-feedback">Title is invalid</div>
                 </div>
                 <div class="mb-3">
@@ -40,36 +39,4 @@
             </form>
         </div>
     </div>
-
-
-    <!-- <h1>Edit this listing</h1>
-    <form method="POST" action="/listings/<%= edit_place._id %>?_method=PUT">
-        <label>Title:</label>
-        <input type="text" id="title" name="title" value="<%= edit_place.title %>" required>
-        <br><br> 
-
-        <label>Description:</label>
-        <textarea id="description" name="description" rows="5" cols="30" required>
-            <%= edit_place.description %>
-        </textarea><br><br> 
-
-        <label>Image URL:</label>
-        <input type="url" id="image" name="image" value="<% edit_place.price%>">
-        <br><br>
-    
-        <label>Price:</label>
-        <input type="number" id="price" name="price" step="0.01" value="<%= edit_place.price %>" required>
-        <br><br> 
-
-        <label>Location:</label>
-        <input type="text" id="location" name="location" value="<%= edit_place.location %>" required>
-        <br><br> 
-
-        <label>Country:</label>
-        <input type="text" id="country" name="country" value="<%= edit_place.country %>" required>
-        <br><br> 
-
-        <button type="submit">Update Info</button>
-    </form>
-     -->
 </body>
