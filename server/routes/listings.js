@@ -16,11 +16,7 @@ router.get("/new", LoggedIn, listingController.newRoute);
 router.get("/:id", listingController.show);
 
 //Create Route
-// router.post("/",LoggedIn, validateListing,listingController.createListing);
-router.post("/", upload.single('listing[image]'), (req, res) => {
-    console.log(req.file);
-    res.send("Done!!");
-})
+router.post("/",LoggedIn, upload.single('listing[image]'),validateListing, listingController.createListing);
 
 //Edit Route
 router.get("/:id/edit",LoggedIn,isOwner, listingController.editListing);

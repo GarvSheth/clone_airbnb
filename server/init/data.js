@@ -2,7 +2,10 @@ const Samplelistings = [
     {
       title: "Cozy Beachfront Condo",
       description: "A modern condo with stunning ocean views and direct beach access. Perfect for a relaxing getaway.",
-      image: "https://example.com/image1.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 120,
       location: "Miami Beach, FL",
       country: "USA"
@@ -10,7 +13,10 @@ const Samplelistings = [
     {
       title: "Mountain Cabin Retreat",
       description: "Rustic cabin located in the heart of the Smoky Mountains. Ideal for nature lovers and hikers.",
-      image: "https://example.com/image2.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 150,
       location: "Gatlinburg, TN",
       country: "USA"
@@ -18,7 +24,10 @@ const Samplelistings = [
     {
       title: "Modern Apartment in City Center",
       description: "Stylish apartment located near all major attractions, perfect for city explorers.",
-      image: "https://example.com/image3.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 100,
       location: "Berlin",
       country: "Germany"
@@ -26,7 +35,10 @@ const Samplelistings = [
     {
       title: "Private Villa with Pool",
       description: "A luxury villa with a private pool and a spacious garden. Enjoy the comfort and privacy.",
-      image: "https://example.com/image4.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 300,
       location: "Mykonos",
       country: "Greece"
@@ -34,7 +46,10 @@ const Samplelistings = [
     {
       title: "Charming Cottage by the Lake",
       description: "Escape to this peaceful lakeside cottage with stunning views and cozy interiors.",
-      image: "https://example.com/image5.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 95,
       location: "Lake Tahoe, CA",
       country: "USA"
@@ -42,7 +57,10 @@ const Samplelistings = [
     {
       title: "Loft Apartment in Downtown",
       description: "Bright and airy loft apartment located in the heart of downtown. Great for nightlife and dining.",
-      image: "https://example.com/image6.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 130,
       location: "Toronto",
       country: "Canada"
@@ -50,7 +68,10 @@ const Samplelistings = [
     {
       title: "Countryside Farmhouse",
       description: "Experience the charm of countryside living in this lovely farmhouse surrounded by fields.",
-      image: "https://example.com/image7.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 80,
       location: "Tuscany",
       country: "Italy"
@@ -58,7 +79,10 @@ const Samplelistings = [
     {
       title: "Luxury Penthouse with Rooftop",
       description: "High-end penthouse with a private rooftop and panoramic city views.",
-      image: "https://example.com/image8.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 450,
       location: "New York, NY",
       country: "USA"
@@ -66,7 +90,10 @@ const Samplelistings = [
     {
       title: "Historic Townhouse",
       description: "A beautiful townhouse in the historic district, with antique furnishings and modern amenities.",
-      image: "https://example.com/image9.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 110,
       location: "Edinburgh",
       country: "Scotland"
@@ -74,7 +101,10 @@ const Samplelistings = [
     {
       title: "Secluded Desert Oasis",
       description: "Unique desert retreat with stunning sunset views and complete privacy.",
-      image: "https://example.com/image10.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 200,
       location: "Joshua Tree, CA",
       country: "USA"
@@ -82,7 +112,10 @@ const Samplelistings = [
     {
       title: "Oceanfront Villa",
       description: "Experience luxury in this oceanfront villa with infinity pool and private beach access.",
-      image: "https://example.com/image11.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 500,
       location: "Malibu, CA",
       country: "USA"
@@ -90,7 +123,10 @@ const Samplelistings = [
     {
       title: "Chic Downtown Studio",
       description: "A stylish studio apartment in the heart of downtown. Close to restaurants, shops, and attractions.",
-      image: "https://example.com/image12.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 85,
       location: "Sydney",
       country: "Australia"
@@ -98,7 +134,10 @@ const Samplelistings = [
     {
       title: "Japanese Ryokan Experience",
       description: "Traditional Japanese ryokan with hot springs, offering an authentic cultural experience.",
-      image: "https://example.com/image13.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 160,
       location: "Kyoto",
       country: "Japan"
@@ -106,7 +145,10 @@ const Samplelistings = [
     {
       title: "Luxury Safari Tent",
       description: "A glamping experience in a luxury safari tent, surrounded by beautiful landscapes.",
-      image: "https://example.com/image14.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 180,
       location: "Masai Mara",
       country: "Kenya"
@@ -114,7 +156,10 @@ const Samplelistings = [
     {
       title: "Tiny House in the Forest",
       description: "Stay in this cozy tiny house, surrounded by nature, for a unique, off-the-grid experience.",
-      image: "https://example.com/image15.jpg",
+      image: {
+        url: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        filename: "ListingImage",
+      },
       price: 70,
       location: "Vancouver Island",
       country: "Canada"

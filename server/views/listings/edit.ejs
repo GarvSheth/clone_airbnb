@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-8 offset-2">
             <h1>Edit this listing</h1>
-            <form novalidate class="needs-validation" method="POST" action="/listings/<%= edit_place._id %>?_method=PUT">
+            <form novalidate class="needs-validation" method="POST" action="/listings/<%= edit_place._id %>?_method=PUT" >
                 <div class="mb-3">
                     <label class="form-label">Title</label>
                     <input type="text" id="title" name="listing[title]" class="form-control" value="<%= edit_place.title %>" required>
@@ -11,12 +11,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                    <textarea id="description" name="listing[description]" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%= edit_place.description %></textarea>
+                    <textarea id="description" name="listing[description]" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%= edit_place.description %></textarea>
                     <div class="invalid-feedback">Description is invalid</div>   
                 </div>    
                 <div class="mb-3">
-                    <label for="exampleInputImage1" class="form-label">Image Link</label>
-                    <input id="image" name="listing[image]" class="form-control" value="<%= edit_place.image %>" >
+                    <label class="form-label">Update Image</label>
+                    <input id="image" name="listing[image]" class="form-control" value="<%= edit_place.image.url %>" >
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">

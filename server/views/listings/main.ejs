@@ -5,7 +5,7 @@
         <% for(let i = 0; i < places.length; i++) { %>
             <a href="/listings/<%= places[i]._id %>" class="listing-link">
                 <div class="card col listing-card">
-                    <img class="card-img-top" src="<%=places[i].image%>" alt="Listing_image" style="height: 20rem;" onerror=this.onerror=null; this.src="https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"; >
+                    <img class="card-img-top" src="<%=places[i].image.url%>" alt="Listing_image" style="height: 20rem;" onerror=this.onerror=null; this.src="https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"; >
                     <div class="card-body">
                       <p class="card-title mb-0"> <b><%= places[i].title %></b></p>
                       <p class="mb-0">5 nights - 10-14 Jan</p>

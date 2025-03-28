@@ -21,8 +21,11 @@ module.exports.show = wrapAsync(async (req, res) => {
 })
 
 module.exports.createListing = wrapAsync(async (req,res,next) => {
+        let url = req.file.path;
+        let filename = req.file.filename;
         const newListing = new Listing(req.body.listing);
         newListing.owner= req.user._id;
+        newListing.image= {url, filename};
         await newListing.save();
         req.flash("success","New listing Added!");
         res.redirect("/listings");
@@ -40,7 +43,10 @@ module.exports.editListing = wrapAsync(async (req,res) => {
 
 module.exports.updateListing = wrapAsync(async(req,res) =>{
     let {id} = req.params;
+    // let url = req.file.path;
+    // let filename = req.file.filename;
     await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    // updated_listing.image = {url, filename};
     const title=req.body.listing.title;
     req.flash("success",`${title} is updated`);
     res.redirect(`/listings/${id}`);

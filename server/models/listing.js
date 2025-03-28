@@ -12,9 +12,8 @@ const  listingSchema = new Schema({
         type: String,
     },
     image: {
-        type: String,
-        set: (v)=> v.trim()==="" ? "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" : v,
-        //something different in original check 55 module, lec3 and 7:00
+        url: String,
+        filename: String
     },
     price: {
         type: Number,
