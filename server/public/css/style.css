@@ -129,3 +129,9 @@ body{
 .btns a{
     margin-left: 0 !important; 
 }
+
+/* MAP */
+#map{
+    height: 400px;
+    width: 800px;
+}

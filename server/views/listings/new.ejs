@@ -17,7 +17,7 @@
                 </div>    
                 <div class="mb-3">
                     <label for="exampleInputImage1" class="form-label">Upload Listing Image</label>
-                    <input type="file" class="form-control" name="listing[image]" id="exampleInputImage1" >
+                    <input type="file" class="form-control" name="listing[image]" id="exampleInputImage1" required>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="exampleInputLocation1" class="form-label">Location</label>
-                        <input placeholder="Enter City" type="text" name="listing[location]" class="form-control" id="exampleInputLocation1" required>
+                        <input placeholder="City,State" type="text" name="listing[location]" class="form-control" id="exampleInputLocation1" required>
                         <div class="invalid-feedback">Location not exist</div>
                     </div>
                 </div>

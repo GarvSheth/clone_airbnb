@@ -22,7 +22,7 @@ router.post("/",LoggedIn, upload.single('listing[image]'),validateListing, listi
 router.get("/:id/edit",LoggedIn,isOwner, listingController.editListing);
 
 //Update
-router.put("/:id", LoggedIn,isOwner, validateListing, listingController.updateListing);
+router.put("/:id", LoggedIn,isOwner,upload.single('listing[image]'), validateListing, listingController.updateListing);
 
 //delete route
 router.delete("/:id",LoggedIn,isOwner, listingController.deleteListing);
