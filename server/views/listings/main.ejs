@@ -3,13 +3,15 @@
     #filters{
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        
     }
 
     .filter{
         text-align: center;
         margin-right: 2rem;
         margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
         opacity: 0.7;
     }
 
@@ -20,6 +22,30 @@
 
     .filter p{
         font-size: 0.8rem;
+    }
+
+    .after-tax{
+        display: none;
+    }
+
+    .before-tax{
+        display: inline;
+    }
+
+    .tax-toggler{
+        height: 3rem;
+        border: .15rem solid rgba(0, 0, 0, .5);
+        border-radius: 10px;
+        padding: 1rem;
+        font-size: .8rem;
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .tax-toggler:hover{
+        border: .15rem solid;
+        background-color: aliceblue;
     }
 </style>
 <body>
@@ -65,7 +91,8 @@
             <div class="filter">
                 <div><i class="fa-regular fa-snowflake"></i></div>
                 <p>Arctic</p>
-            </div><div class="filter">
+            </div>
+            <div class="filter">
                 <div><i class="fas fa-water"></i></div>
                 <p>Islands</p>
             </div>
@@ -86,8 +113,8 @@
                         <div class="card-body">
                         <p class="card-title mb-0"> <b><%= places[i].title %></b></p>
                         <p class="mb-0">5 nights - 10-14 Jan</p>
-                        <p class="card-text mb-0" id="before-tax">$<%= places[i].price%>/night, before tax</p>
-                        <p class="card-text mb-0" id="after-tax">$<%= places[i].price *5 *1.18%> total after taxes</p>
+                        <p class="card-text mb-0 before-tax">$<%= places[i].price%>/night, before tax</p>
+                        <p class="card-text mb-0 after-tax">$<%= places[i].price *5 *1.18%> total after taxes</p>
                         </div>
                     </div>
                 </a>
@@ -99,6 +126,16 @@
 <script>
     let taxSwitch=document.getElementById("flexSwitchCheckDefault");
     taxSwitch.addEventListener("click", ()=>{
+        let taxInfo=document.getElementsByClassName("after-tax");
+        let taxBefore=document.getElementsByClassName("before-tax");
+        let isBeforeTaxVisible = taxBefore[0].style.display !== "none";
 
+        // Toggle display for all elements
+        for (let before of taxBefore) {
+            before.style.display = isBeforeTaxVisible ? "none" : "inline";
+        }
+        for (let info of taxInfo) {
+            info.style.display = isBeforeTaxVisible ? "inline" : "none";
+        }
     });
 </script>
