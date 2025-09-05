@@ -77,6 +77,3 @@ npm install
 # CLOUDINARY_SECRET=your-cloudinary-secret
 # MAPBOX_TOKEN=your-mapbox-token
 # SESSION_SECRET=your-secret
-
-# Start the server
-npm start
