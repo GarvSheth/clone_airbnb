@@ -1,71 +1,66 @@
-🥝 Kiwi Project
+# 🥝 Kiwi Project  
 
-The Kiwi Project is a full-stack vacation rental web application inspired by modern rental marketplaces.
-It allows users to browse, create, and review listings with integrated maps, cloud storage, and dynamic data.
+The **Kiwi Project** is inspired by modern vacation rental marketplaces. It enables users to explore rental listings, view details on maps, manage accounts, leave reviews, and much more — all with a clean, responsive UI.  
 
-📌 Project Overview
+## 📌 Project Overview  
 
-Kiwi is built with Node.js, Express, MongoDB, EJS, Bootstrap, Cloudinary, and Mapbox.
-It provides users with a seamless experience of exploring listings, viewing locations on maps, adding reviews, and uploading images.
+Kiwi is built using **Bootstrap, EJS, Express, MongoDB, Cloudinary, and Mapbox** to deliver a full-stack web application experience.  
+It’s designed not just as a static clone, but as a **fully functional platform** where users can interact with listings, maps, and reviews in real time.  
 
-✨ Features
+## ✨ Features  
 
-Dynamic Listings
+### 🏡 Listings Management  
+- Users can **create, edit, and delete** rental listings.  
+- Upload multiple images per listing with **Cloudinary** integration.  
+- Rich descriptions with pricing and location details.  
 
-Create, edit, and delete rental listings.
+### 📍 Interactive Maps  
+- **Mapbox integration** to display property locations on dynamic maps.  
+- Search and view listings based on location.  
+- Clickable map markers linked to listing details.  
 
-Store and serve images using Cloudinary.
+### 👤 User Accounts & Authentication  
+- Secure **signup/login/logout** system using Passport.js.  
+- Each user can manage their own listings.  
+- Only authenticated users can post reviews or modify listings.  
 
-Interactive Maps
+### ⭐ Reviews & Ratings  
+- Users can **add, edit, and delete** reviews on listings.  
+- Rating system integrated for better feedback.  
+- Prevents duplicate reviews by the same user.  
 
-Integrated with Mapbox for location search & display.
+### 📱 Responsive UI/UX  
+- Built with **Bootstrap** for a clean and mobile-friendly design.  
+- Simple, intuitive navigation inspired by real-world rental platforms.  
 
-Shows listing locations with interactive pins.
+### ☁️ Cloud & Database  
+- **MongoDB** + **Mongoose** for efficient data management.  
+- **Cloudinary** for secure image upload and hosting.  
+- Persistent storage for users, listings, and reviews.  
 
-User Authentication
+---
 
-Signup/Login system with secure session management.
+## 🛠️ Tech Stack  
 
-Users can manage their own listings and reviews.
+- **Frontend/UI**: Bootstrap, EJS  
+- **Backend**: Node.js, Express  
+- **Database**: MongoDB, Mongoose  
+- **Authentication**: Passport.js  
+- **Image Hosting**: Cloudinary  
+- **Maps & Location**: Mapbox  
 
-Reviews System
+---
 
-Add, edit, and delete reviews on listings.
+## 🚀 Getting Started  
 
-Ratings integrated with listings for better user feedback.
+### Prerequisites  
+- [Node.js](https://nodejs.org/) installed  
+- MongoDB database (local or cloud e.g. MongoDB Atlas)  
+- Cloudinary account for image uploads  
+- Mapbox API key  
 
-Responsive UI
-
-Styled with Bootstrap for mobile-first design.
-
-Clean, user-friendly layouts.
-
-🛠️ Technologies Used
-
-Frontend: EJS, Bootstrap
-
-Backend: Node.js, Express
-
-Database: MongoDB with Mongoose
-
-Image Storage: Cloudinary
-
-Maps & Location: Mapbox
-
-Authentication: Passport.js
-
-🚀 Getting Started
-Prerequisites
-
-Node.js
- installed
-
-MongoDB
- running locally or on Atlas
-
-Cloudinary & Mapbox accounts for API keys
-
-Installation
+### Installation  
+```bash
 # Clone the repository
 git clone https://github.com/your-username/kiwi-project.git
 
@@ -75,28 +70,13 @@ cd kiwi-project
 # Install dependencies
 npm install
 
-# Create a .env file and add your keys
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_KEY=your_key
-CLOUDINARY_SECRET=your_secret
-MAPBOX_TOKEN=your_mapbox_token
-DB_URL=your_mongodb_connection
+# Create a .env file and add:
+# MONGO_URI=your-mongodb-uri
+# CLOUDINARY_CLOUD_NAME=your-cloudinary-name
+# CLOUDINARY_KEY=your-cloudinary-key
+# CLOUDINARY_SECRET=your-cloudinary-secret
+# MAPBOX_TOKEN=your-mapbox-token
+# SESSION_SECRET=your-secret
 
 # Start the server
 npm start
-
-Usage
-
-Visit in your browser:
-
-http://localhost:3000
-
-📌 Future Improvements
-
-Booking system with calendar availability
-
-Payment gateway integration
-
-Advanced search & filtering options
-
-User profile with activity history
